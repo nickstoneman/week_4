@@ -43,6 +43,7 @@ end
 def add_element_to_beginning_of_array(array, element)
   # array.push(element).sort
   array.unshift(element)
+  # array.insert(0, element)
 end
 
 # sort an array of words by their last letter, e.g.
@@ -55,17 +56,18 @@ end
 # 'banana' becomes 'ban'. If the string is an odd number of letters
 # round up - so 'apple' becomes 'app'
 def get_first_half_of_string(string)
-  
+  string.slice(0, (string.length/2.to_f).ceil)
 end
 
 # turn a positive integer into a negative integer. A negative integer
 # stays negative
 def make_numbers_negative(number)
-  if (number > 0)
-      number * -1
-    else
-      number
-  end
+ -number.abs
+  # if (number > 0)
+  #     number * -1
+  #   else
+  #     number
+  # end
 end
 
 # turn an array of numbers into two arrays of numbers, one an array of 
