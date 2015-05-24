@@ -1,14 +1,16 @@
+require 'pry'
 require_relative 'stock'
 
 class Client
   attr_writer :client_name, :client_balance
-  attr_reader :stocks #phone_numbers
+  attr_reader :stocks
 
   def initialize
     @stocks = []
-    #phone_numbers
   end
 
+  
+  #Adding animals into the shelter
   # Takes the name and price of a stock
   # attr_accessor :company, :price
   def add_stock_to_account(company, price)
@@ -27,28 +29,28 @@ class Client
   end
 
   def client_details
-    "#{client_name} has a balance of $#{client_balance}."
+    puts "#{client_name} has a balance of $#{client_balance}."
   end
 
   def print_client_holdings
-    puts "Stocks held:"
+    puts "Stocks held..."
     stocks.each { |stock| puts stock }
   end
 
+# This is killing me here....
   def print_client_total
     puts "Total of all stocks held: "
-    # add up every odd number in array
+    # odd = stocks.select.each_with_index { |str, i| i.even? } 
+    # puts stocks.price
+    # puts Hash[*stock_splits = stocks.map { |x| x.to_s.split(' ') }]
+    # puts Hash[*stocks]
   end
 
-    # delete client total from balance
 
-nick = Client.new
-nick.client_name = "Nick Stoneman"
-nick.client_balance = 10000
-puts nick.client_details
-nick.add_stock_to_account("Amazon", "300")
-nick.add_stock_to_account("Barclays", "200")
-nick.print_client_holdings
-nick.print_client_total
+
+
+
+
+
 
 end
